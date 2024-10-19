@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billionaire Diary</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- favicon  -->
+    <link rel="shortcut icon" href="./images/heart.png" type="image/x-icon" />
+    <!-- daisyUi CDN  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome CDN  -->
+    <script
+      src="https://kit.fontawesome.com/014e5a97b0.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Font Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <main class="tabel mx-auto grid grid-cols-5 gap-3 items-start">
+        <nav
+          class="col-span-1 bg-blueTransparent text-white py-5 px-3 min-h-svh"
+        >
+          <div class="grid grid-cols-1 gap-y-4">
+            <img src="./images/logo/logo.png" alt="" class="mx-auto py-4" />
+            <button class="btn font-bold text-gray-600" id="addUser">
+              Add a user
+            </button>
+            <button class="btn font-bold text-gray-600" id="doubleMoney">
+              Double Money
+            </button>
+            <button
+              id="highRank"
+              class="btn font-bold text-gray-600"
+              id="sortByRank"
+            >
+              Sort By Lowest Rank
+            </button>
+            <button id="WelthCalculate" class="btn font-bold text-gray-600">
+              Calculate Entire Wealth
+            </button>
+            <div class="border-b border-gray-300 my-5"></div>
+            <button class="btn font-bold text-gray-600">
+              Show All Billionaires
+            </button>
+            <button class="btn font-bold text-gray-600">
+              Richest by industry
+            </button>
+            <button class="btn font-bold text-gray-600">
+              Richest by states
+            </button>
+          </div>
+        </nav>
+        <div class="overflow-x-auto col-span-4 pt-4">
+          <div class="flex justify-between items-center mb-5">
+            <div class="">
+              <label for="">
+                <input
+                  type="text"
+                  placeholder="search by name"
+                  class="my-5 py-2 px-4 border-b border-gray-400 outline-none"
+                />
+              </label>
+              <button class="btn">Search</button>
+            </div>
+            <div class="">
+              <img src="./images/logo/logo1.png" alt="" class="w-20" />
+            </div>
+          </div>
+
+          <!-- TableStart Here  -->
+          <table class="table" id="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Person</th>
+                <th>Citizenship</th>
+                <th>Industry</th>
+                <th>Rank</th>
+                <th>Wealth</th>
+              </tr>
+            </thead>
+            <tbody id="tableData">
+              <!-- row 1 -->
+            </tbody>
+            <tbody id="sortingData"></tbody>
+
+            <!-- foot -->
+            <div class="divider"></div>
+          </table>
+
+          <div id="loading" class="mx-auto text-center hidden">
+            <span class="loading loading-infinity loading-lg"></span>
+            <p class="text-red-600">Loading Data</p>
+          </div>
+
+          <div class="divider"></div>
+          <div class="total border-red-600 px-3 font-bold mb-6">
+            <div id="TotallBanalce" class="flex justify-around">
+              <h2>Totall</h2>
+              <h2><span>$</span> <span id="totallMoney">0</span></h2>
+            </div>
+            <div class="flex justify-around hidden mt-4" id="soringMoney">
+              <h2>Sort By Rank Money</h2>
+              <h2><span>$</span> <span id="totallMoneySort">0</span></h2>
+            </div>
+          </div>
+
+
+
+          
+        <!-- calculate Welth  -->
+   <div id="tableForAllData" class="hidden">
+    <div >
+      <h2 id="totalWealth" class="text-center font-bold my-4 text-red-700 text-2xl"></h2>
+    </div>
+  <table class="table table-xl text-center " >
+
+     <thead >
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Citizenship</th>
+        <th>Welth</th>
+      </tr>
+    </thead>
+    <tbody id="totallWelthData">
+      
+    </tbody>
+  </table>
+
+   </div>
+
+
+
+      </main>
+    </header>
+    Modal
+    <section id="modal">
+
+    </section>
+    <script src="./index.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blueTransparent: "rgba(14, 27, 52, 1)",
+              btnTextColor: "rgba(14, 122, 129, 1)",
+              footerBg: "rgba(19, 19, 19, 1)",
+            },
+            backgroundImage: {},
+            fontFamily: {
+              Lato: "Lato",
+            },
+          },
+        },
+      };
+    </script>
+  </body>
+</html>
